@@ -1,12 +1,13 @@
 import tensorflow as tf
 import numpy as np
 
+
 # Predefined function to build a feedforward neural network
-def build_mlp(input_placeholder, 
+def build_mlp(input_placeholder,
               output_size,
-              scope, 
-              n_layers=2, 
-              size=500, 
+              scope,
+              n_layers=2,
+              size=500,
               activation=tf.tanh,
               output_activation=None
               ):
@@ -17,13 +18,14 @@ def build_mlp(input_placeholder,
         out = tf.layers.dense(out, output_size, activation=output_activation)
     return out
 
+
 class NNDynamicsModel():
-    def __init__(self, 
-                 env, 
+    def __init__(self,
+                 env,
                  n_layers,
-                 size, 
-                 activation, 
-                 output_activation, 
+                 size,
+                 activation,
+                 output_activation,
                  normalization,
                  batch_size,
                  iterations,
